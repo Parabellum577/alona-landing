@@ -3,29 +3,40 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-
-const navigation = [
-  { name: "Про мене", href: "#about" },
-  { name: "Послуги", href: "#services" },
-  { name: "Сертифікати", href: "#certificates" },
-  { name: "Процес", href: "#process" },
-]
+import { 
+  Sheet, 
+  SheetContent, 
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription 
+} from "@/components/ui/sheet"
+import { LanguageSwitcher } from "./language-switcher"
+import { useTranslations } from 'next-intl'
+import { VisuallyHidden } from "@/components/ui/visually-hidden"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const t = useTranslations('navigation')
+
+  const navigation = [
+    { name: t('about'), href: '#about' },
+    { name: t('services'), href: '#services' },
+    { name: t('certificates'), href: '#certificates' },
+    { name: t('process'), href: '#process' },
+  ]
 
   const scrollToSection = (href: string) => {
-    setIsOpen(false)
     const element = document.querySelector(href)
-    element?.scrollIntoView({ behavior: "smooth" })
+    element?.scrollIntoView({ behavior: 'smooth' })
+    setIsOpen(false)
   }
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold">
-        Litvin Alona
+          Litvin Alona
         </Link>
 
         {/* Desktop Navigation */}
@@ -34,46 +45,61 @@ export function Header() {
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href)}
-              className="text-sm font-medium text-gray-700 hover:text-[#9399FA] transition-colors"
+              className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
             >
               {item.name}
             </button>
           ))}
+          <LanguageSwitcher />
           <button
             onClick={() => scrollToSection("#contact")}
-            className="bg-[#9399FA] text-white px-4 py-2 rounded-lg hover:bg-[#8AA3F9] transition-colors"
+            className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg transition-colors"
           >
-            Консультація
+            {t('consultation')}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <button className="p-2">
+          <SheetTrigger asChild>
+            <button className="md:hidden">
               <Menu className="h-6 w-6" />
+              <span className="sr-only">Menu</span>
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px]">
-            <div className="flex flex-col gap-4 mt-8">
-              {navigation.map((item) => (
+          <SheetContent 
+            side="right" 
+            className="w-[300px] flex flex-col"
+          >
+            <VisuallyHidden>
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+                <SheetDescription>
+                 Navigation
+                </SheetDescription>
+              </SheetHeader>
+            </VisuallyHidden>
+            <div className="flex-1 mt-10">
+              <div className="flex flex-col gap-4">
+                {navigation.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-lg font-medium text-gray-700 hover:text-primary transition-colors text-left"
+                  >
+                    {item.name}
+                  </button>
+                ))}
                 <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-lg font-medium text-gray-700 hover:text-primary transition-colors text-left"
+                  onClick={() => scrollToSection("#contact")}
+                  className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg transition-colors text-center"
                 >
-                  {item.name}
+                  {t('consultation')}
                 </button>
-              ))}
-              <button
-                onClick={() => {
-                  scrollToSection("#contact")
-                  setIsOpen(false)
-                }}
-                className="bg-[#9399FA] text-white px-4 py-2 rounded-lg hover:bg-[#8AA3F9] transition-colors mt-4"
-              >
-                Консультація
-              </button>
+              </div>
+            </div>
+            <div className="py-4 flex justify-center">
+              <LanguageSwitcher />
             </div>
           </SheetContent>
         </Sheet>

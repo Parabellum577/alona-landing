@@ -1,0 +1,74 @@
+{
+  "navigation": {
+    "about": "About",
+    "services": "Services",
+    "certificates": "Certificates",
+    "process": "Process",
+    "consultation": "Consultation"
+  },
+  "hero": {
+    "title": "Numerologist & Nail Therapist",
+    "services": {
+      "nailTherapy": "Nail Therapy",
+      "matrix": "Destiny Matrix Analysis",
+      "lila": "Psychological Game \"Lila\"",
+      "consultation": "Book a Consultation"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description1": "I am a professional numerologist and nail therapist with years of experience. I help people find answers to important life questions and achieve harmony through numerology and nail therapy.",
+    "description2": "My approach combines traditional methods with modern practices, allowing me to achieve the best results for each client."
+  },
+  "process": {
+    "title": "What Will You Get from Our Sessions?",
+    "steps": {
+      "1": {
+        "title": "Form a Request",
+        "description": "We consult and determine your request to reveal the problem."
+      },
+      "2": {
+        "title": "Analysis",
+        "description": "In your case - we conduct the necessary analysis together."
+      },
+      "3": {
+        "title": "Instructions",
+        "description": "During the process, you will receive clear instructions for actions."
+      },
+      "4": {
+        "title": "Problem Transformation",
+        "description": "We work together on transforming the problem."
+      },
+      "5": {
+        "title": "Time for Changes",
+        "description": "We discuss the process after the session ends."
+      }
+    }
+  },
+  "certificates": {
+    "title": "My Certificates"
+  },
+  "contact": {
+    "title": "Book a Consultation",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "service": "Consultation Type",
+      "message": "Message",
+      "contactMethod": "How to Contact You?",
+      "contact": "Social Media Username",
+      "terms": "I agree to the Terms of Use and Privacy Policy",
+      "submit": "Send Contacts",
+      "serviceType": "Service Type",
+      "serviceTypePlaceholder": "Select service type",
+      "numerology": "Numerology",
+      "therapy": "Nail Therapy",
+      "game": "Lila Game",
+      "contactMethodPlaceholder": "Select contact method",
+      "telegram": "Telegram",
+      "viber": "Viber",
+      "whatsapp": "WhatsApp",
+      "phone": "Phone"
+    }
+  }
+} 
