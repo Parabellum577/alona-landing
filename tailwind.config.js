@@ -1,3 +1,5 @@
+import animate from "tailwindcss-animate"
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class"],
@@ -23,11 +25,16 @@ module.exports = {
           background: "hsl(var(--background))",
           foreground: "hsl(var(--foreground))",
           primary: {
-            DEFAULT: "#9399FA",
-            hover: "#8AA3F9",
-            light: "#B889FA",
-            blue: "#89C7FA",
-            cyan: "#81F0FA",
+            // DEFAULT: "#35502A",
+            // hover: "#446834",
+            // light: "#5B8A47",
+            // dark: "#243720",
+            // sage: "#7FA665",
+            DEFAULT: "#81A433",
+            hover: "#95BD3B",
+            light: "#A8D344",
+            dark: "#5C7625",
+            sage: "#C4E475",
             foreground: "hsl(var(--primary-foreground))",
           },
           secondary: {
@@ -60,6 +67,11 @@ module.exports = {
           md: "calc(var(--radius) - 2px)",
           sm: "calc(var(--radius) - 4px)",
         },
+        animation: {
+          "accordion-down": "accordion-down 0.2s ease-out",
+          "accordion-up": "accordion-up 0.2s ease-out",
+          gradient: 'gradient 3s ease infinite',
+        },
         keyframes: {
           "accordion-down": {
             from: { height: 0 },
@@ -69,12 +81,19 @@ module.exports = {
             from: { height: "var(--radix-accordion-content-height)" },
             to: { height: 0 },
           },
+          gradient: {
+            '0%, 100%': {
+              'background-position': '0% 50%',
+            },
+            '50%': {
+              'background-position': '100% 50%',
+            },
+          },
         },
-        animation: {
-          "accordion-down": "accordion-down 0.2s ease-out",
-          "accordion-up": "accordion-up 0.2s ease-out",
+        backgroundSize: {
+          '200%': '200%',
         },
       },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [animate],
   }

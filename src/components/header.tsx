@@ -38,7 +38,7 @@ export function Header({ policy }: { policy?: boolean }) {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link 
           href="/" 
-          className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient bg-[length:200%_auto] bg-clip-text text-transparent"
+          className="text-2xl font-bold bg-gradient-to-r from-primary via-primary-light to-primary-sage animate-gradient bg-[length:200%_auto] bg-clip-text text-transparent"
         >
           Litvin Alona
         </Link>

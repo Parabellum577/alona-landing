@@ -84,7 +84,7 @@ export function Testimonials() {
                 size="icon"
                 onClick={scrollPrev}
                 disabled={!prevBtnEnabled}
-                className="rounded-full bg-[#9399FA] text-white hover:bg-[#7A81F7] hover:text-white disabled:opacity-50"
+                className="rounded-full bg-primary text-white hover:bg-primary-hover hover:text-white disabled:opacity-50"
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -93,7 +93,7 @@ export function Testimonials() {
                 size="icon"
                 onClick={scrollNext}
                 disabled={!nextBtnEnabled}
-                className="rounded-full bg-[#9399FA] text-white hover:bg-[#7A81F7] hover:text-white disabled:opacity-50"
+                className="rounded-full bg-primary text-white hover:bg-primary-hover hover:text-white disabled:opacity-50"
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -106,7 +106,7 @@ export function Testimonials() {
                 <div key={testimonial.id} className="flex-[0_0_100%] md:flex-[0_0_50%] min-w-0 pl-4">
                   <div className="relative h-full">
                     <div className="bg-gray-50 rounded-3xl p-8 h-full flex flex-col relative">
-                      <div className="text-[#9399FA] text-6xl font-serif absolute left-4 top-3">&ldquo;</div>
+                      <div className="text-primary text-6xl font-serif absolute left-4 top-3">&ldquo;</div>
                       <p className="text-gray-600 mb-auto text-lg pt-8">{t(`reviews.${testimonial.id}`)}</p>
                       <div className="flex items-center justify-start mt-6">
                         <span className="font-semibold text-lg">{testimonial.name}</span>
@@ -115,13 +115,13 @@ export function Testimonials() {
                             href={testimonial.instagramUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#9399FA] hover:text-[#7A81F7] transition-colors ml-6"
+                            className="text-primary hover:text-primary-hover transition-colors ml-6"
                           >
                             <Instagram className="h-5 w-5" />
                           </Link>
                         )}
                       </div>
-                      <div className="text-[#9399FA] text-6xl font-serif absolute right-4 -bottom-3">&rdquo;</div>
+                      <div className="text-primary text-6xl font-serif absolute right-4 -bottom-3">&rdquo;</div>
                     </div>
                   </div>
                 </div>
