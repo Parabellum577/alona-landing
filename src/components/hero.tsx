@@ -15,7 +15,7 @@ export function Hero() {
           <div className="relative h-full">
             <div className="aspect-square w-full h-full rounded-3xl bg-gray-100 overflow-hidden">
               <Image
-                src="https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg"
+                src="/images/hero_image.png"
                 alt="Profile"
                 width={800}
                 height={800}
