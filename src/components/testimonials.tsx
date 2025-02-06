@@ -70,7 +70,10 @@ export function Testimonials() {
   }, [emblaApi, onSelect])
 
   return (
-    <section className="py-16">
+    <section 
+      id="testimonials" 
+      className="py-16 scroll-mt-12"
+    >
       <div className="mx-auto">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex justify-between items-center mb-8 px-4">

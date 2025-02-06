@@ -24,6 +24,7 @@ export function Header() {
     { name: t('services'), href: '#services' },
     { name: t('certificates'), href: '#certificates' },
     { name: t('process'), href: '#process' },
+    { name: t('testimonials'), href: '#testimonials' },
   ]
 
   const scrollToSection = (href: string) => {

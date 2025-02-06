@@ -38,7 +38,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-12">
+    <section id="services" className="py-12 scroll-mt-12">
       <div>
         <h2 className="text-3xl font-bold mb-8 ">{t("title")}</h2>
         <div className="space-y-4">
