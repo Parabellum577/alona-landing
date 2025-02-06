@@ -4,7 +4,7 @@ import * as z from "zod"
 import { toast } from "sonner"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -12,11 +12,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
+import Link from 'next/link'
 
 const phoneRegex = /^\+?[1-9]\d{1,14}$/
 
 export function ContactForm() {
   const t = useTranslations('contact')
+  const locale = useLocale()
 
   const formSchema = z.object({
     name: z.string().min(2),
@@ -212,7 +214,18 @@ export function ContactForm() {
                       <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
                     <div className="space-y-1 leading-none">
-                      <FormLabel>{t('form.terms')}</FormLabel>
+                      <FormLabel>
+                        {t.rich('terms', {
+                          privacy: (chunks) => (
+                            <Link 
+                              href={locale === 'uk' ? '/uk/privacy-policy' : '/ru/privacy-policy'} 
+                              className="text-primary hover:text-primary-hover underline"
+                            >
+                              {chunks}
+                            </Link>
+                          )
+                        })}
+                      </FormLabel>
                       <FormMessage />
                     </div>
                   </FormItem>
