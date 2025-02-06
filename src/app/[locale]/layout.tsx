@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import "../globals.css";
 import { Toaster } from "sonner";
+import { CookieBanner } from "@/components/cookie-banner"
+import "../globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -42,6 +43,7 @@ export default async function RootLayout({
       <body className={montserrat.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div id="root">{children}</div>
+          <CookieBanner />
           <Toaster position="top-center" richColors />
         </NextIntlClientProvider>
       </body>

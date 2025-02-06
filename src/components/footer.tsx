@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { Instagram, Send, Mail } from "lucide-react"
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 export function Footer() {
   const locale = useLocale()
+  const t = useTranslations('footer')
   
   return (
     <footer className="bg-black text-white py-8">
@@ -21,7 +22,21 @@ export function Footer() {
             </Link>
           </div>
           <div className="text-sm text-gray-400">
-            © 2024 - {locale === 'uk' ? 'Всі права захищено' : 'Все права защищены'}
+            © {new Date().getFullYear()} - {t('copyright')}
+          </div>
+          <div className="flex gap-4 text-sm text-gray-400">
+            <Link 
+              href={locale === 'uk' ? '/uk/privacy-policy' : '/ru/privacy-policy'}
+              className="hover:text-[#9399FA]"
+            >
+              {t('privacyPolicy')}
+            </Link>
+            <Link 
+              href={locale === 'uk' ? '/uk/cookie-policy' : '/ru/cookie-policy'}
+              className="hover:text-[#9399FA]"
+            >
+              {t('cookiePolicy')}
+            </Link>
           </div>
         </div>
       </div>
