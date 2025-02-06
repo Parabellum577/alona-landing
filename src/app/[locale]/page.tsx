@@ -8,6 +8,7 @@ import { Certificates } from "@/components/certificates"
 import { Process } from "@/components/process"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
+import { Testimonials } from "@/components/testimonials"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Services />
         <Certificates />
         <Process />
+        <Testimonials />
         <ContactForm />
       </main>
       <Footer />
