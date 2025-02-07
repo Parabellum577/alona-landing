@@ -25,11 +25,6 @@ module.exports = {
           background: "hsl(var(--background))",
           foreground: "hsl(var(--foreground))",
           primary: {
-            // DEFAULT: "#35502A",
-            // hover: "#446834",
-            // light: "#5B8A47",
-            // dark: "#243720",
-            // sage: "#7FA665",
             DEFAULT: "#81A433",
             hover: "#95BD3B",
             light: "#A8D344",
@@ -71,6 +66,7 @@ module.exports = {
           "accordion-down": "accordion-down 0.2s ease-out",
           "accordion-up": "accordion-up 0.2s ease-out",
           gradient: 'gradient 3s ease infinite',
+          "bounce-scale": "bounce-scale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
         },
         keyframes: {
           "accordion-down": {
@@ -89,6 +85,11 @@ module.exports = {
               'background-position': '100% 50%',
             },
           },
+          "bounce-scale": {
+            "0%": { transform: "scale(0)" },
+            "70%": { transform: "scale(1.1)" },
+            "100%": { transform: "scale(1)" }
+          }
         },
         backgroundSize: {
           '200%': '200%',
