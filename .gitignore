@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local env files
+.env*.local
+
+# dependencies
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnpm-store
