@@ -3,7 +3,8 @@ import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "sonner";
-import { CookieBanner } from "@/components/cookie-banner"
+import { CookieBanner } from "@/components/cookie-banner";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import "../globals.css";
 
 const montserrat = Montserrat({
@@ -45,6 +46,7 @@ export default async function RootLayout({
           <div id="root">{children}</div>
           <CookieBanner />
           <Toaster position="top-center" richColors />
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>

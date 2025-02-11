@@ -9,9 +9,9 @@ export function Footer() {
 
   return (
     <footer className="bg-black text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div className="relative w-20 h-20">
+      <div className="container mx-auto px-4 ">
+        <div className="flex items-center min-[580px]:justify-between justify-center">
+          <div className="relative w-20 h-20 hidden min-[580px]:block">
             <Image
               src="/images/elephant.avif"
               alt="image"
@@ -65,7 +65,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
-          <div className="relative w-20 h-20">
+          <div className="relative w-20 h-20 hidden min-[580px]:block">
             <Image
               src="/images/yoga.avif"
               alt="image"
