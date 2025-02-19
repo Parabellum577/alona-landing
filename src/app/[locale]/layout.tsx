@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "sonner";
-import { siteMetadata, getLocalizedMetadata, defaultLocale } from "@/config/metadata";
+import { siteMetadata, getLocalizedMetadata } from "@/config/metadata";
 import { CookieBanner } from "@/components/cookie-banner";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { JsonLd } from "@/components/json-ld";
