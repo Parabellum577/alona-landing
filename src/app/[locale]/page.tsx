@@ -1,5 +1,3 @@
-"use client"
-
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -9,6 +7,8 @@ import { Process } from "@/components/process"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
 import { Testimonials } from "@/components/testimonials"
+
+export const dynamic = 'force-static';
 
 export default function Home() {
   return (

@@ -16,22 +16,22 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Матриця Долі",
+    name: "1",
     instagramUrl: "https://instagram.com/example1",
   },
   {
     id: 2,
-    name: "Консультація по матриці",
+    name: "2",
     instagramUrl: "https://instagram.com/example2",
   },
   {
     id: 3,
-    name: "Матриця Долі",
+    name: "3",
     instagramUrl: "https://instagram.com/example1",
   },
   {
     id: 4,
-    name: "Консультація по матриці",
+    name: "4",
     instagramUrl: "https://instagram.com/example2",
   },
 ];
