@@ -9,7 +9,7 @@ export default createMiddleware({
   defaultLocale,
 
   // Only add locale prefix for non-default locale
-  localePrefix: 'always',
+  localePrefix: 'as-needed',
 
   localeDetection: false
 });
