@@ -1,5 +1,3 @@
-'use client'
-
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -13,10 +11,11 @@ import { siteMetadata, getLocalizedMetadata } from "@/config/metadata"
 import type { Metadata } from "next"
 
 export async function generateMetadata({ 
-  params: { locale } 
+  params 
 }: { 
-  params: { locale: string } 
+  params: Promise<{ locale: string }> 
 }): Promise<Metadata> {
+  const { locale } = await params;
   const localized = getLocalizedMetadata(locale)
 
   return {
@@ -30,7 +29,7 @@ export async function generateMetadata({
           url: '/images/preview_image_hero.png',
           width: 1200,
           height: 630,
-          alt: siteMetadata.author,
+          alt: 'Alona Litvin',
         },
       ],
       locale: localized.locale,
