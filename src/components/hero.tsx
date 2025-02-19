@@ -8,6 +8,12 @@ import { useTranslations } from 'next-intl'
 export function Hero() {
   const t = useTranslations('hero')
 
+  const scrollToService = (serviceId: string) => {
+    const servicesSection = document.querySelector('#services')
+    servicesSection?.scrollIntoView({ behavior: 'smooth' })
+    window.dispatchEvent(new CustomEvent('openService', { detail: serviceId }))
+  }
+
   return (
     <section className="pt-24 pb-12">
       <div className=" mx-auto">
@@ -32,6 +38,10 @@ export function Hero() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-[calc(100%-12rem)]">
               <Link
                 href="#services"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToService('nail-therapy')
+                }}
                 className="block p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group relative min-h-[160px]"
               >
                 <span className="font-medium">{t('services.nailTherapy')}</span>
@@ -41,15 +51,23 @@ export function Hero() {
               </Link>
               <Link
                 href="#services"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToService('trust-session')
+                }}
                 className="block p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group relative min-h-[160px]"
               >
-                <span className="font-medium">{t('services.matrix')}</span>
+                <span className="font-medium">{t('services.trustSession')}</span>
                 <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
                   <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600" />
                 </div>
               </Link>
               <Link
                 href="#services"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToService('lila')
+                }}
                 className="block p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors group relative min-h-[160px]"
               >
                 <span className="font-medium">{t('services.lila')}</span>

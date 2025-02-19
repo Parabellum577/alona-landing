@@ -150,9 +150,9 @@ export function ContactForm() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="numerology">{t('form.numerology')}</SelectItem>
-                            <SelectItem value="therapy">{t('form.therapy')}</SelectItem>
-                            <SelectItem value="game">{t('form.game')}</SelectItem>
+                            <SelectItem value="trustSession">{t('form.trustSession')}</SelectItem>
+                            <SelectItem value="nailTherapy">{t('form.therapy')}</SelectItem>
+                            <SelectItem value="lila">{t('form.game')}</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />

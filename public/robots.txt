@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alona-litvin.com/sitemap.xml 
