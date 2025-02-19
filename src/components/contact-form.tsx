@@ -100,6 +100,13 @@ export function ContactForm() {
 
   const contactMethod = form.watch("contactMethod")
 
+  const serviceTypes = [
+    { value: 'trustSession', label: t('form.trustSession') },
+    { value: 'therapy', label: t('form.therapy') },
+    { value: 'game', label: t('form.game') },
+    { value: 'mac', label: t('form.mac') },
+  ];
+
   return (
     <section id="contact" className="py-16 bg-gray-50 rounded-t-3xl scroll-mt-12">
       <div className="container mx-auto px-4">
@@ -150,9 +157,11 @@ export function ContactForm() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="trustSession">{t('form.trustSession')}</SelectItem>
-                            <SelectItem value="nailTherapy">{t('form.therapy')}</SelectItem>
-                            <SelectItem value="lila">{t('form.game')}</SelectItem>
+                            {serviceTypes.map((service) => (
+                              <SelectItem key={service.value} value={service.value}>
+                                {service.label}
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                         <FormMessage />

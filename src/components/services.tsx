@@ -20,84 +20,119 @@ export function Services() {
   const services = [
     {
       id: "nail-therapy",
-      title: t('nailTherapy.title'),
+      title: t('items.nailTherapy.title'),
       content: (
         <>
-          <p className="mb-4">{t('nailTherapy.description1')}</p>
-          <p className="mb-4">{t('nailTherapy.description2')}</p>
-          <p className="mb-4">{t('nailTherapy.description3')}</p>
-          <p className="mb-4">{t('nailTherapy.description4')}</p>
-          <p className="mb-4">{t('nailTherapy.description5')}</p>
-          <div className="mt-4">
-            <p className="font-semibold">{t('nailTherapy.price')}</p>
-            <p>{t('nailTherapy.duration')}</p>
-          </div>
+          <p className="mb-4">{t('items.nailTherapy.description1')}</p>
+          <p className="mb-4">{t('items.nailTherapy.description2')}</p>
+          <p className="mb-4">{t('items.nailTherapy.description3')}</p>
+          <p className="mb-4">{t('items.nailTherapy.description4')}</p>
+          <p className="mb-4">{t('items.nailTherapy.description5')}</p>
+          <p className="font-semibold">{t('items.nailTherapy.price')}</p>
+          <p className="font-semibold">{t('items.nailTherapy.duration')}</p>
         </>
       ),
     },
     {
       id: "lila",
-      title: t('lila.title'),
+      title: t('items.lila.title'),
       content: (
         <>
-          <p className="mb-4">{t('lila.description')}</p>
+          <p className="mb-4">{t('items.lila.description')}</p>
           
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">{t('lila.process.title')}</h4>
+            <h4 className="font-semibold mb-2">{t('items.lila.process.title')}</h4>
             <ol className="list-decimal pl-5 space-y-2">
-              {t.raw('lila.process.steps').map((step: string, index: number) => (
+              {t.raw('items.lila.process.steps').map((step: string, index: number) => (
                 <li key={index}>{step}</li>
               ))}
             </ol>
           </div>
           
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">{t('lila.benefits.title')}</h4>
+            <h4 className="font-semibold mb-2">{t('items.lila.benefits.title')}</h4>
             <ul className="list-disc pl-5 space-y-2">
-              {t.raw('lila.benefits.items').map((benefit: string, index: number) => (
+              {t.raw('items.lila.benefits.items').map((benefit: string, index: number) => (
                 <li key={index}>{benefit}</li>
               ))}
             </ul>
           </div>
           
-          <p className="mb-4">{t('lila.conclusion')}</p>
+          <p className="mb-4">{t('items.lila.conclusion')}</p>
           
           <div className="mt-4">
-            <p className="font-semibold">{t('lila.price')}</p>
-            <p>{t('lila.duration')}</p>
+            <p className="font-semibold">{t('items.lila.price')}</p>
+            <p>{t('items.lila.duration')}</p>
           </div>
         </>
       ),
     },
     {
       id: "trust-session",
-      title: t('trustSession.title'),
+      title: t('items.trustSession.title'),
       content: (
         <>
-          <p className="mb-4">{t('trustSession.description')}</p>
+          <p className="mb-4">{t('items.trustSession.description')}</p>
           
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">{t('trustSession.expectations.title')}</h4>
+            <h4 className="font-semibold mb-2">{t('items.trustSession.expectations.title')}</h4>
             <ul className="list-disc pl-5 space-y-2">
-              {t.raw('trustSession.expectations.items').map((item: string, index: number) => (
+              {t.raw('items.trustSession.expectations.items').map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
           
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">{t('trustSession.formats.title')}</h4>
+            <h4 className="font-semibold mb-2">{t('items.trustSession.formats.title')}</h4>
             <ul className="list-none pl-5 space-y-2">
-              <li>{t('trustSession.formats.offline')}</li>
-              <li>{t('trustSession.formats.online')}</li>
+              <li>{t('items.trustSession.formats.offline')}</li>
+              <li>{t('items.trustSession.formats.online')}</li>
             </ul>
           </div>
           
-          <p className="mb-4">{t('trustSession.conclusion')}</p>
-          <p className="mb-4 font-semibold">{t('trustSession.cta')}</p>
+          <p className="mb-4">{t('items.trustSession.conclusion')}</p>
+          <p className="mb-4 font-semibold">{t('items.trustSession.cta')}</p>
           
           <div className="mt-4">
-            <p className="font-semibold">{t('trustSession.price')}</p>
+            <p className="font-semibold">{t('items.trustSession.price')}</p>
+          </div>
+        </>
+      ),
+    },
+    {
+      id: "mac-session",
+      title: t('items.macSession.title'),
+      content: (
+        <>
+          <p className="mb-4">{t('items.macSession.description')}</p>
+          
+          <div className="mb-4">
+            <h4 className="font-semibold mb-2">{t('items.macSession.process.title')}</h4>
+            <div className="space-y-4">
+              {t.raw('items.macSession.process.steps').map((step: { title: string; description: string }, index: number) => (
+                <div key={index}>
+                  <h5 className="font-semibold">{step.title}</h5>
+                  <p>{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="mb-4">
+            <h4 className="font-semibold mb-2">{t('items.macSession.benefits.title')}</h4>
+            <ul className="list-disc pl-5 space-y-2">
+              {t.raw('items.macSession.benefits.items').map((benefit: string, index: number) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <p className="mb-4">{t('items.macSession.conclusion')}</p>
+          
+          <div className="mt-4">
+            <p className="font-semibold">{t('items.macSession.price.amount')}</p>
+            <p>{t('items.macSession.price.duration')}</p>
           </div>
         </>
       ),
