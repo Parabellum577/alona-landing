@@ -9,6 +9,42 @@ import { Process } from "@/components/process"
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
 import { Testimonials } from "@/components/testimonials"
+import { siteMetadata, getLocalizedMetadata } from "@/config/metadata"
+import type { Metadata } from "next"
+
+export async function generateMetadata({ 
+  params: { locale } 
+}: { 
+  params: { locale: string } 
+}): Promise<Metadata> {
+  const localized = getLocalizedMetadata(locale)
+
+  return {
+    title: localized.title,
+    description: localized.description,
+    openGraph: {
+      title: localized.title,
+      description: localized.description,
+      images: [
+        {
+          url: '/images/preview_image_hero.png',
+          width: 1200,
+          height: 630,
+          alt: siteMetadata.author,
+        },
+      ],
+      locale: localized.locale,
+      type: 'website',
+      siteName: siteMetadata.siteName,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: localized.title,
+      description: localized.description,
+      images: ['/images/preview_image_hero.png'],
+    },
+  }
+}
 
 export default function Home() {
   return (
