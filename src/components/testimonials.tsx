@@ -115,9 +115,9 @@ export function Testimonials() {
                         {t(`reviews.${testimonial.id}`)}
                       </p>
                       <div className="flex items-center justify-start mt-6">
-                        <span className="font-semibold text-lg">
+                        {/* <span className="font-semibold text-lg">
                           {testimonial.name}
-                        </span>
+                        </span> */}
                         {testimonial.instagramUrl && (
                           <Link
                             href={testimonial.instagramUrl}

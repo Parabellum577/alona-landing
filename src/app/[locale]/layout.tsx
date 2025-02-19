@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { Toaster } from "sonner";
-import { siteMetadata, getLocalizedMetadata } from "@/config/metadata";
+import { siteMetadata, getLocalizedMetadata, defaultLocale } from "@/config/metadata";
 import { CookieBanner } from "@/components/cookie-banner";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { JsonLd } from "@/components/json-ld";
@@ -14,8 +14,9 @@ const montserrat = Montserrat({
   weight: ["500", "600", "700"],
 });
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const localized = getLocalizedMetadata(params.locale);
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const localized = getLocalizedMetadata(locale);
 
   return {
     title: {
@@ -44,10 +45,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     robots: {
       index: true,
       follow: true,
-    },
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
     },
     twitter: {
       card: 'summary_large_image',
@@ -85,7 +82,7 @@ export default async function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className={montserrat.className}>
+      <body className={montserrat.className} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div id="root">{children}</div>
           <CookieBanner />

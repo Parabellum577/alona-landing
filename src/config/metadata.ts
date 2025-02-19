@@ -27,5 +27,8 @@ export const siteMetadata = {
 export const defaultLocale = 'uk';
 
 export const getLocalizedMetadata = (locale: string): LocalizedMetadata => {
+  if (!locale || locale === '/') {
+    return siteMetadata.locales[defaultLocale];
+  }
   return siteMetadata.locales[locale] || siteMetadata.locales[defaultLocale];
 }; 
