@@ -9,7 +9,6 @@ export const siteMetadata = {
   author: "Альона Літвін",
   siteUrl: "https://www.alona-litvin.com",
   siteName: "Alona Litvin",
-  defaultLocale: 'uk',
   
   locales: {
     ru: {
@@ -25,6 +24,8 @@ export const siteMetadata = {
   } as Record<string, LocalizedMetadata>
 };
 
+export const defaultLocale = 'uk';
+
 export const getLocalizedMetadata = (locale: string): LocalizedMetadata => {
-  return siteMetadata.locales[locale] || siteMetadata.locales[siteMetadata.defaultLocale];
+  return siteMetadata.locales[locale] || siteMetadata.locales[defaultLocale];
 }; 

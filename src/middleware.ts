@@ -1,23 +1,21 @@
 import createMiddleware from 'next-intl/middleware';
-import { locales, defaultLocale } from './config';
+import { defaultLocale } from '@/config/metadata';
 
 // Get the preferred locale, similar to the above or using a different method
 export default createMiddleware({
+  // List of all locales that are supported
+  locales: ['uk', 'ru'],
+
+  // Used when no locale matches
   defaultLocale,
-  locales,
-  // If the default locale is matched, the URL will be rewritten to remove the locale prefix
-  localePrefix: 'as-needed'
+
+  // Only add locale prefix for non-default locale
+  localePrefix: 'as-needed',
+
+  localeDetection: false
 });
 
 export const config = {
-  matcher: [
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/_next` or `/_vercel`
-    // - … if they contain a dot (e.g. `favicon.ico`)
-    '/((?!api|_next|_vercel|.*\\..*).*)',
-    // However, match all pathnames within /api, except for
-    // - … if they start with `/api/auth` or `/api/webhook`
-    // - … if they contain a dot (e.g. `favicon.ico`)
-    '/api/((?!auth|webhook|.*\\..*).*)'
-  ]
+  // Match only internationalized pathnames
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 }; 
