@@ -76,11 +76,6 @@ export default async function RootLayout({
       <head>
         <title>Alona Litvin - Spiritual Guide & Therapist</title>
         <JsonLd />
-        <meta property="og:image" content="https://alona-litvin.com/images/og-image.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://alona-litvin.com/images/og-image.jpg" />
       </head>
       <body className={montserrat.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
