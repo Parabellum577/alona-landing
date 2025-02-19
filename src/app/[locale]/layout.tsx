@@ -15,16 +15,23 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Alona Litvin - Spiritual Guide & Therapist",
-  description: "Професійні послуги духовного провідника: цвяхотерапія, розбір матриці долі, психологічна гра Ліла. Допомагаю знайти шлях до себе та внутрішньої гармонії.",
+  description: "Духовний провідник, психолог, цвяхотерапевт. Допомагаю людям знайти шлях до себе та гармонію.",
   keywords: "Альона Літвін, духовний провідник, цвяхотерапія, матриця долі, Ліла, психологія, терапія, медитація",
   authors: [{ name: "Альона Літвін" }],
+  metadataBase: new URL('https://alona-litvin.com'),
   openGraph: {
-    type: "website",
-    locale: "uk_UA",
-    url: "https://alona-litvin.com",
-    title: "Альона Літвін | Духовний провідник і терапевт",
-    description: "Професійні послуги духовного провідника: цвяхотерапія, розбір матриці долі, психологічна гра Ліла",
-    siteName: "Альона Літвін",
+    title: 'Alona Litvin - Spiritual Guide & Therapist',
+    description: 'Духовний провідник, психолог, цвяхотерапевт. Допомагаю людям знайти шлях до себе та гармонію.',
+    images: [
+      {
+        url: '/images/preview_image_hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'Alona Litvin',
+      },
+    ],
+    locale: 'uk_UA',
+    type: 'website',
   },
   robots: {
     index: true,
@@ -34,8 +41,14 @@ export const metadata: Metadata = {
     width: "device-width",
     initialScale: 1,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alona Litvin - Spiritual Guide & Therapist',
+    description: 'Духовний провідник, психолог, цвяхотерапевт. Допомагаю людям знайти шлях до себе та гармонію.',
+    images: ['/images/preview_image_hero.png'],
+  },
   verification: {
-    google: "verification_token", // token Google Search Console
+    google: "verification_token",
   }
 };
 
