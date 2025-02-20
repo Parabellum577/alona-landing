@@ -16,23 +16,33 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "1",
-    instagramUrl: "https://instagram.com/example1",
+    name: "Іра",
+    instagramUrl: "https://www.instagram.com/viedmiedieva_iryna",
   },
   {
     id: 2,
-    name: "2",
-    instagramUrl: "https://instagram.com/example2",
+    name: "Аліна",
+    instagramUrl: "https://www.instagram.com/alinakubitska",
   },
   {
     id: 3,
-    name: "3",
-    instagramUrl: "https://instagram.com/example1",
+    name: "Ліля",
+    instagramUrl: "https://www.instagram.com/liliana_smm",
   },
   {
     id: 4,
-    name: "4",
-    instagramUrl: "https://instagram.com/example2",
+    name: "Даша",
+    instagramUrl: "https://www.instagram.com/komissarova.d.a.r.i.a",
+  },
+  {
+    id: 5,
+    name: "Альона",
+    instagramUrl: "https://www.instagram.com/alona_tsymbaliuk_",
+  },
+  {
+    id: 6,
+    name: "Марія",
+    instagramUrl: "https://www.instagram.com/mariiasavliuk",
   },
 ];
 
@@ -115,9 +125,9 @@ export function Testimonials() {
                         {t(`reviews.${testimonial.id}`)}
                       </p>
                       <div className="flex items-center justify-start mt-6">
-                        {/* <span className="font-semibold text-lg">
+                        <span className="font-semibold text-lg">
                           {testimonial.name}
-                        </span> */}
+                        </span>
                         {testimonial.instagramUrl && (
                           <Link
                             href={testimonial.instagramUrl}
