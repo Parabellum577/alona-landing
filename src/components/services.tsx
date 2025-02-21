@@ -54,7 +54,7 @@ export function Services() {
       className="py-12 scroll-mt-12"
       aria-labelledby="services-title"
     >
-      <div>
+      <div className="container mx-auto px-2 sm:px-4">
         <h2 id="services-title" className="text-3xl font-bold mb-8">
           {t("title")}
         </h2>
@@ -62,17 +62,17 @@ export function Services() {
           {services.map((service) => (
             <article
               key={service.id}
-              className="border border-gray-200 rounded-xl overflow-hidden"
+              className="border border-gray-200 rounded-xl relative overflow-hidden"
             >
               <button
                 onClick={() =>
                   setOpenService(openService === service.id ? null : service.id)
                 }
-                className="w-full p-6 bg-gray-50 flex justify-between items-center hover:bg-gray-100 transition-colors"
+                className="w-full p-4 sm:p-6 bg-gray-50 flex justify-between items-center hover:bg-gray-100 transition-colors"
                 aria-expanded={openService === service.id}
                 aria-controls={`content-${service.id}`}
               >
-                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">{service.title}</h3>
                 <ChevronDown
                   className={`w-6 h-6 text-primary transition-transform ${
                     openService === service.id ? "rotate-180" : ""
@@ -81,13 +81,15 @@ export function Services() {
               </button>
               <div
                 id={`content-${service.id}`}
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`grid transition-all duration-300 ease-in-out ${
                   openService === service.id
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 }`}
               >
-                <div className="p-6 text-gray-600">{service.content}</div>
+                <div className="overflow-hidden">
+                  <div className="p-4 sm:p-6 text-gray-600">{service.content}</div>
+                </div>
               </div>
             </article>
           ))}

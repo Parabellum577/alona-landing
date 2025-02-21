@@ -65,13 +65,28 @@ module.exports = {
         animation: {
           "accordion-down": "accordion-down 0.2s ease-out",
           "accordion-up": "accordion-up 0.2s ease-out",
+          'spin-slow': 'spin-slow 15s linear infinite',
           gradient: 'gradient 3s ease infinite',
           "bounce-scale": "bounce-scale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+          'spin-slow-1': 'spin-slow-1 15s linear infinite',
+          'spin-slow-3': 'spin-slow-3 15s linear infinite',
         },
         keyframes: {
           "accordion-down": {
             from: { height: 0 },
             to: { height: "var(--radix-accordion-content-height)" },
+          },
+          'spin-slow': {
+            from: { transform: 'translate(-34%, -23%) rotate(0deg)' },
+            to: { transform: 'translate(-34%, -23%) rotate(360deg)' }
+          },
+          'spin-slow-1': {
+            from: { transform: 'translate(-25%, -21%) rotate(0deg)' },
+            to: { transform: 'translate(-25%, -21%) rotate(-360deg)' }
+          },
+          'spin-slow-3': {
+            from: { transform: 'translate(-27%, -19%) rotate(0deg)' },
+            to: { transform: 'translate(-27%, -19%) rotate(360deg)' }
           },
           "accordion-up": {
             from: { height: "var(--radix-accordion-content-height)" },
@@ -96,5 +111,10 @@ module.exports = {
         },
       },
     },
-    plugins: [animate],
+    plugins: [
+      animate,
+      function({ addVariant }) {
+        addVariant('group-hover-spin', ':where(.hover-spin:hover &)')
+      },
+    ],
   }

@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import Link from 'next/link'
-import Image from "next/image"
+import { ContactFormSuccess } from "./contact-form-success"
 
 const phoneRegex = /^\+?[1-9]\d{1,14}$/
 
@@ -266,19 +266,9 @@ export function ContactForm() {
             </div>
           </>
         ) : (
-          <div className="max-w-2xl mx-auto text-center space-y-8 min-h-[764px] flex flex-col items-center justify-center">
-            <h2 className="text-3xl font-bold text-primary animate-fadeIn">{t('form.thankYou')}</h2>
-            <p className="text-lg text-gray-600 animate-fadeIn [animation-delay:200ms]">{t('form.successDetails')}</p>
-            <div className="relative w-[400px] h-[400px] mx-auto animate-bounce-scale">
-              <Image
-                src="/images/buda-lotos.png"
-                alt="Success"
-                fill
-                sizes="100%"
-                className="object-contain"
-              />
-            </div>
-          </div>
+          <ContactFormSuccess 
+            message={t('form.successMessage')}
+          />
         )}
       </div>
     </section>
