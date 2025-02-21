@@ -32,8 +32,8 @@ export function Hero() {
           </div>
           <div className="space-y-8 h-full flex flex-col justify-between">
             <div className="space-y-4">
-              <h1 className="text-4xl font-bold">{t('title')}</h1>
-              <h2 className="text-4xl font-bold text-primary">{t('name')}</h2>
+              <h1 className="text-3xl xs:text-4xl font-bold">{t('title')}</h1>
+              <h2 className="text-3xl xs:text-4xl font-bold text-primary">{t('name')}</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-[calc(100%-12rem)]">
               <Link
